@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style>
+  body {
+    padding: 2em;
+    color: #000;
+    font-family: 'Calibri', 'OpenSans', 'Tahoma', 'Arial', sans-serif;
+  }
+  
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6 {
+    font-family: 'StoneSansITCStd', 'OpenSans', 'Arial', 'Courier New', sans-serif;
+    color: #108CB1;
+  }
+  
+  code,
+  pre {
+    background-color: #AFCAD3;
+    padding: 0.1em 0.5em;
+  }
+  
+  pre {
+      white-space: pre-wrap;
+      display: inline-block;
+  }
+  
+  </style>
+</head>
+<body>
+<header>
+<h1 class="title">README</h1>
+<p class="subtitle"><em><strong>Beautifully formatted minutes - in minutes</strong></em></p>
+</header>
+<p>Editing agendas and minutes in Microsoft Word is a pain, and most agendas start and end the same way. Wouldn’t it be nice if you could just jot down the bits in the middle and the tasks to be done in Markdown? Now you can!</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>Windows OS</li>
+<li><a href="https://github.com/jgm/pandoc">pandoc</a></li>
+</ul>
+<h2 id="usage">Usage</h2>
+<ol type="1">
+<li><p>Edit the styles in includes.docx to set up your docx styles.</p></li>
+<li><p>Double-click <code>make-meeting.cmd</code></p></li>
+<li><p>Open the <code>items.md</code> file in the newly created <code>meeting</code> folder</p></li>
+<li><p>Add values to the YAML data at the top of the file:</p>
+<pre><code> ---
+ title: Agenda #agenda or minutes?
+ subtitle: Documentation Standards Committee # committee name
+ date: Weds 30 February 2019 # date of meeting
+ location: Very Prestigious University - City Campus, 360 Main Street, level 13, Room 999 # address including room number
+ zoom: zoom.us/000999 # URL for Zoom
+ phone: 09 1234 5678 # phone number to call for zoom audio or for phone conference, including any meeting ID if needed.
+ apologies: # if any received
+ ---</code></pre></li>
+<li><p>Add your agenda items. Instead of numbering your items, use a hash like this:</p>
+<pre><code>#. **My item in bold text**  
+  #. my sub-item</code></pre>
+<p>The numbers will automatically flow.</p></li>
+<li>Open <code>actions.md</code>. This is where your actions will go. They’re pulled in as Attachment 1 in both agendas and minutes. There are four columns:
+<ul>
+<li>task</li>
+<li>person</li>
+<li>due date</li>
+<li>status</li>
+</ul>
+<p>Write each action on a new line, with a pipe (|) between each column entry:</p>
+<p><code>The task to be done | Hugh | 1 Jan 2019 | completed</code></p></li>
+<li><p>Go back to the main directory and double-click <code>make-agenda.cmd</code>. In the ‘meeting’ folder you will now have an agenda document in docx format and a minutes document in markdown.</p></li>
+<li><p>Edit the minutes.md file during your meeting.</p></li>
+<li><p>Double-click <code>make-minutes.cmd</code> to create minutes in docx format. Now rename the <code>meeting</code> folder and move it to wherever you keep your meeting archives.</p></li>
+<li><p>Enjoy all your spare time.</p></li>
+</ol>
+<h2 id="todos">TODOS</h2>
+<p>The minutes don’t need location, zoom info etc. Should it use a different template? This may require extra files.</p>
+</body>
+</html>
